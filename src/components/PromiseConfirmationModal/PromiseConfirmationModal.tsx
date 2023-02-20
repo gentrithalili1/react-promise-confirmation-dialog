@@ -1,10 +1,9 @@
 import React, { PropsWithChildren } from 'react'
-import { PromiseConfirmationData } from '@types'
+import { PromiseConfirmationData } from 'types'
 import './PromiseConfirmationModal.css'
-interface PromiseConfirmationModalProps extends PromiseConfirmationData {}
 
 export default function PromiseConfirmationModal(
-  props: PropsWithChildren<PromiseConfirmationModalProps>,
+  props: PropsWithChildren<PromiseConfirmationData>,
 ) {
   const { isOpen, text, children, customComponent, onCancel, onConfirm } = props
 

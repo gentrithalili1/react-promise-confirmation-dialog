@@ -1,11 +1,11 @@
 import React, { PropsWithChildren, useState } from 'react'
-import PromiseConfirmationContext from '@context/PromiseConfirmationContext/PromiseConfirmationContext'
 import {
   PromiseConfirmationData,
   PromiseConfirmParams,
   PromiseConfirmationContext as IPromiseConfirmationContext,
-} from '@types'
-import PromiseConfirmationModal from '@components/PromiseConfirmationModal/PromiseConfirmationModal'
+} from 'types'
+import PromiseConfirmationContext from './PromiseConfirmationContext'
+import PromiseConfirmationModal from 'components/PromiseConfirmationModal/PromiseConfirmationModal'
 
 interface ConfirmationContextProviderProps {
   config?: {

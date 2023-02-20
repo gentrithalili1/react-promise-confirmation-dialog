@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { PromiseConfirmationContext as IPromiseConfirmationContext } from '@types'
+import { PromiseConfirmationContext as IPromiseConfirmationContext } from 'types'
 
 const defaultContext = {
   confirm: () => new Promise((resolve) => resolve),

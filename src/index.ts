@@ -1,3 +1,4 @@
-import PromiseConfirmationContextProvider from '@context/PromiseConfirmationContext/PromiseConfirmationContextProvider'
-import usePromiseConfirmation from '@hooks/useConfirmation'
-export { PromiseConfirmationContextProvider, usePromiseConfirmation }
+import PromiseConfirmationContextProvider from 'context/PromiseConfirmationContext/PromiseConfirmationContextProvider'
+import usePromiseConfirmation from 'hooks/useConfirmation'
+import { PromiseConfirmationData } from 'types'
+export { PromiseConfirmationContextProvider, usePromiseConfirmation, PromiseConfirmationData }
