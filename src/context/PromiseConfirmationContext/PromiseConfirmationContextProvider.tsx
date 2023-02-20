@@ -3,9 +3,9 @@ import {
   PromiseConfirmationData,
   PromiseConfirmParams,
   PromiseConfirmationContext as IPromiseConfirmationContext,
-} from 'types'
+} from '../../types'
+import PromiseConfirmationModal from '../../components/PromiseConfirmationModal/PromiseConfirmationModal'
 import PromiseConfirmationContext from './PromiseConfirmationContext'
-import PromiseConfirmationModal from 'components/PromiseConfirmationModal/PromiseConfirmationModal'
 
 interface ConfirmationContextProviderProps {
   config?: {

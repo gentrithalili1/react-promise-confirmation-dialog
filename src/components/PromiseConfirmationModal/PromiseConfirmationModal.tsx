@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react'
-import { PromiseConfirmationData } from 'types'
 import './PromiseConfirmationModal.css'
+import { PromiseConfirmationData } from '../../types'
 
 export default function PromiseConfirmationModal(
   props: PropsWithChildren<PromiseConfirmationData>,
