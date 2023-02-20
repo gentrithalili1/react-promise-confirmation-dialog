@@ -10,6 +10,12 @@
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
+    "baseUrl": "src",
+    "paths": {
+      "@*": [
+        "*"
+      ]
+    },
     "rootDir": "./src",
     "outDir": "./dist/esm",
     "strict": true,
