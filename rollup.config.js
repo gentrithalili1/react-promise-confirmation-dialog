@@ -20,6 +20,6 @@ export default {
       strict: false,
     },
   ],
-  plugins: [postcss({ plugins: [] }), typescript({ objectHashIgnoreUnknownHack: true })],
+  plugins: [postcss({ plugins: [] }), typescript({ objectHashIgnoreUnknownHack: false })],
   external: ['react', 'react-dom'],
 }
