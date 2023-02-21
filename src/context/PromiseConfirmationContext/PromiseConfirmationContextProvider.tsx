@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useMemo, useState } from 'react'
+import React, { PropsWithChildren, useCallback, useMemo, useState } from 'react'
 import {
   PromiseConfirmationData,
   PromiseConfirmParams,
@@ -64,11 +64,13 @@ export default function PromiseConfirmationContextProvider(
     })
   }
 
+  const memoizedConfirm = useCallback(confirm, [])
+
   const context: IPromiseConfirmationContext = useMemo(
     () => ({
-      confirm,
+      confirm: memoizedConfirm,
     }),
-    [],
+    [memoizedConfirm],
   )
 
   return (

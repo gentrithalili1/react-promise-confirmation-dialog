@@ -5,7 +5,7 @@ export interface ObjectAny {
 }
 
 export interface PromiseConfirmationContext {
-  confirm: (params?: PromiseConfirmParams) => Promise<any>
+  confirm: (params?: PromiseConfirmParams) => Promise<unknown>
 }
 
 export interface PromiseConfirmationData {
