@@ -5,12 +5,14 @@ export interface ObjectAny {
 }
 
 export interface PromiseConfirmationContext {
-  confirm: (params: PromiseConfirmParams) => Promise<any>
+  confirm: (params?: PromiseConfirmParams) => Promise<any>
 }
 
 export interface PromiseConfirmationData {
   text?: string
   description?: string
+  confirmButtonLabel?: string
+  cancelButtonLabel?: string
   isOpen: boolean
   customData?: ObjectAny
   onConfirm: () => void

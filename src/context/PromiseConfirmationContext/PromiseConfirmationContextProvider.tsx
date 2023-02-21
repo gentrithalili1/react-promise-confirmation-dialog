@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from 'react'
+import React, { PropsWithChildren, useMemo, useState } from 'react'
 import {
   PromiseConfirmationData,
   PromiseConfirmParams,
@@ -9,51 +9,71 @@ import PromiseConfirmationContext from './PromiseConfirmationContext'
 
 interface ConfirmationContextProviderProps {
   config?: {
-    defaultText?: string
+    portalElementId?: string
+    text?: string
+    confirmButtonLabel?: string
+    cancelButtonLabel?: string
   }
 }
 
-const voidFunction = () => {}
-const defaultText = 'Are you sure?'
+const initialValues = {
+  text: 'Are you sure?',
+  confirmButtonLabel: 'Confirm',
+  cancelButtonLabel: 'Cancel',
+}
 
 export default function PromiseConfirmationContextProvider(
   props: PropsWithChildren<ConfirmationContextProviderProps>,
 ) {
+  const { config } = props
+
   const [state, setState] = useState<PromiseConfirmationData>(() => ({
-    text: props?.config?.defaultText ?? defaultText,
+    text: config?.text ?? initialValues.text,
+    confirmButtonLabel: config?.confirmButtonLabel ?? initialValues.confirmButtonLabel,
+    cancelButtonLabel: config?.cancelButtonLabel ?? initialValues.cancelButtonLabel,
     isOpen: false,
-    onConfirm: voidFunction,
-    onCancel: voidFunction,
+    onConfirm: () => {},
+    onCancel: () => {},
   }))
 
-  function confirm(params: PromiseConfirmParams) {
-    const { text: txt, ...restParams } = params
-    const text = txt || defaultText
+  const confirm = (params?: PromiseConfirmParams) => {
+    const { text, confirmButtonLabel, cancelButtonLabel, ...restParams } = params ?? {}
+
+    const textData = {
+      text: text || config?.text || initialValues.text,
+      confirmButtonLabel:
+        confirmButtonLabel || config?.confirmButtonLabel || initialValues.confirmButtonLabel,
+      cancelButtonLabel:
+        cancelButtonLabel || config?.cancelButtonLabel || initialValues.cancelButtonLabel,
+    }
 
     return new Promise((resolve, reject) => {
       setState({
         ...restParams,
-        text: text,
+        ...textData,
         isOpen: !state.isOpen,
         onConfirm: () => {
-          setState({ ...state, isOpen: false, text })
+          setState({ ...state, isOpen: false, ...textData })
           resolve(true)
         },
         onCancel: (reason?: string) => {
-          setState({ ...state, isOpen: false, text })
+          setState({ ...state, isOpen: false, ...textData })
           reject(reason)
         },
       })
     })
   }
 
-  const context: IPromiseConfirmationContext = {
-    confirm: confirm,
-  }
+  const context: IPromiseConfirmationContext = useMemo(
+    () => ({
+      confirm,
+    }),
+    [],
+  )
 
   return (
     <PromiseConfirmationContext.Provider value={context}>
-      <PromiseConfirmationModal {...state} />
+      <PromiseConfirmationModal {...state} portalElementId={config?.portalElementId} />
       {props.children}
     </PromiseConfirmationContext.Provider>
   )
