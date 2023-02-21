@@ -1,11 +1,27 @@
-import React, { PropsWithChildren } from 'react'
+import React from 'react'
+import ReactPortal from '../ReactPortal/ReactPortal'
 import { PromiseConfirmationData } from '../../types'
-import './PromiseConfirmationModal.css'
+import CloseIcon from '../../icons/CloseIcon'
 
-export default function PromiseConfirmationModal(
-  props: PropsWithChildren<PromiseConfirmationData>,
-) {
-  const { isOpen, text, children, customComponent, onCancel, onConfirm } = props
+interface PromiseConfirmationModalProps extends PromiseConfirmationData {
+  portalElementId?: string
+}
+
+const mainClassName = 'PromiseConfirmationModal'
+const clsName = (suffix: string) => `${mainClassName}__${suffix}`
+
+export default function PromiseConfirmationModal(props: PromiseConfirmationModalProps) {
+  const {
+    portalElementId,
+    isOpen,
+    text,
+    description,
+    confirmButtonLabel,
+    cancelButtonLabel,
+    customComponent,
+    onCancel,
+    onConfirm,
+  } = props
 
   const handleConfirm = () => {
     onConfirm?.()
@@ -21,31 +37,33 @@ export default function PromiseConfirmationModal(
     return customComponent?.(rest)
   }
 
+  if (!isOpen) {
+    return null
+  }
+
   return (
-    <div
-      className={`PromiseConfirmationModal ${
-        isOpen ? 'PromiseConfirmationModal--visible' : ''
-      }`.trimEnd()}
-    >
-      {customComponent ? (
-        renderCustomComponent()
-      ) : (
-        <div className='PromiseConfirmationModal__wrapper'>
-          <div className='PromiseConfirmationModal__head'>
-            <h3>{text}</h3>
-            <button onClick={handleCancel} className='PromiseConfirmationModal__close'>
-              X
-            </button>
-          </div>
+    <ReactPortal portalElementId={portalElementId}>
+      <div className={mainClassName}>
+        {customComponent ? (
+          renderCustomComponent()
+        ) : (
+          <div className={clsName('wrapper')}>
+            <div className={clsName('head')}>
+              <h3 className={clsName('title')}>{text}</h3>
+              <button onClick={handleCancel} className={clsName('close')}>
+                <CloseIcon />
+              </button>
+            </div>
 
-          <div className='PromiseConfirmationModal__body'>{children}</div>
+            {description && <div className={clsName('body')}>{description}</div>}
 
-          <div className='PromiseConfirmationModal__footer'>
-            <button onClick={handleConfirm}>Yes</button>
-            <button onClick={handleCancel}>No</button>
+            <div className={clsName('footer')}>
+              <button onClick={handleConfirm}>{confirmButtonLabel}</button>
+              <button onClick={handleCancel}>{cancelButtonLabel}</button>
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </ReactPortal>
   )
 }
