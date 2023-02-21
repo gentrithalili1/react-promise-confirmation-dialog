@@ -64,7 +64,7 @@ export default function PromiseConfirmationContextProvider(
     })
   }
 
-  const memoizedConfirm = useCallback(confirm, [])
+  const memoizedConfirm = useCallback(confirm, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const context: IPromiseConfirmationContext = useMemo(
     () => ({
