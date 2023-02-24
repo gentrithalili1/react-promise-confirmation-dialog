@@ -19,7 +19,14 @@ function App() {
             <Routes>
               {routes.map((route) => {
                 const RouteElement = route.element
-                return <Route index={route.path === RouteNames.SETUP} path={route.path} element={<RouteElement />} />
+                return (
+                  <Route
+                    key={route.path}
+                    index={route.path === RouteNames.SETUP}
+                    path={route.path}
+                    element={<RouteElement />}
+                  />
+                )
               })}
               {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
