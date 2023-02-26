@@ -1,1 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css");
+
+body {
+  font-family: -apple-system, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+code {
+  font-family: "Fira Code", monospace !important;
+  color: unset;
+}
+
+
