@@ -1,0 +1,2 @@
+var e=("undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{}).parcelRequire56a0;e.register("iAxx1",(function(i,a){var n=e("jYji4"),l=e("cQami");function s(e){e.register(n),e.register(l);var i=e.util.clone(e.languages.typescript);e.languages.tsx=e.languages.extend("jsx",i)}i.exports=s,s.displayName="tsx",s.aliases=[]}));
+//# sourceMappingURL=tsx.4fa72ab9.js.map
