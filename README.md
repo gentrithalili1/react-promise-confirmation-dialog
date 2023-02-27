@@ -1,9 +1,8 @@
-<h1 align="center">Welcome to <code>react-promise-confirmation-dialog</code> 👋</h1>
+<h3 align="center">Welcome to <code>react-promise-confirmation-dialog</code> 👋</h3>
 <p>
   <a href="https://www.npmjs.com/package/react-promise-confirmation-dialog" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/react-promise-confirmation-dialog">
   </a>
-  <img src="https://img.shields.io/node/v/react-promise-confirmation-dialog">
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -16,6 +15,7 @@ React Promise Confirmation Dialog is a simple and easy-to-use package that allow
 This package is customizable, allowing you to easily tailor the look and feel of your dialogs to match the style of your application.
 
 ### ✨ [Live Demo](https://gentrithalili1.github.io/react-promise-confirmation-dialog/)
+##
 
 ## Install
 
@@ -36,18 +36,17 @@ import { PromiseConfirmationContextProvider } from 'react-promise-confirmation-d
 ```
 
 ```jsx
-function App() {
+function Index() {
   return (
     <PromiseConfirmationContextProvider>
-      <YourComponent />
+      <App />
     </PromiseConfirmationContextProvider>
   );
 }
 ```
 
 ```jsx
-function YourComponent() {
-
+function App() {
   const handleConfirmClick = async () => {
     try {
       await confirmation.confirm()
@@ -70,7 +69,7 @@ function YourComponent() {
 You can provide default configuration to <code>PromiseConfirmationContextProvider</code>
 
 ```jsx
-function App() {
+function Index() {
   return (
     <PromiseConfirmationContextProvider config={{
         portalElementId: '',
@@ -78,7 +77,7 @@ function App() {
         confirmButtonLabel: '',
         cancelButtonLabel: ''
     }}>
-      <YourComponent />
+      <App />
     </PromiseConfirmationContextProvider>
   );
 }
@@ -95,8 +94,7 @@ function App() {
 You can also provide custom params everytime you open a confirmation dialog 
 
 ```jsx
-function YourComponent() {
-
+function App() {
     const handleConfirmClick = async () => {
         try {
             await confirmation.confirm({
