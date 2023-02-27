@@ -15,7 +15,7 @@ function App() {
           <div className='col-md-3'>
             <Sidebar />
           </div>
-          <div className='col-md-9'>
+          <div className='col-md-8 offset-md-1'>
             <Routes>
               {routes.map((route) => {
                 const RouteElement = route.element

@@ -7,15 +7,17 @@ function Setup() {
     <div>
       <div className='mb-5'>
         <p className='text-body mb-1'>1. Install</p>
-        <CodeBlock language='bash' code={setupCode['yarn']} />
+        <CodeBlock open language='bash' code={setupCode['yarn']} />
 
         <p className='text-body mt-1 mb-1'>or</p>
-        <CodeBlock language='bash' code={setupCode['npm']} />
+        <CodeBlock open language='bash' code={setupCode['npm']} />
       </div>
 
       <div className='mb-5'>
-        <p className='text-body mb-1'>2. Wrap your application with PromiseConfirmationContextProvider</p>
-        <CodeBlock language='bash' code={setupCode['provider']} />
+        <p className='text-body mb-1'>
+          2. Wrap your application with <code>PromiseConfirmationContextProvider</code>
+        </p>
+        <CodeBlock open language='bash' code={setupCode['provider']} />
       </div>
     </div>
   )

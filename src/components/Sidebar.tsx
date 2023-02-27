@@ -8,12 +8,20 @@ const links = [
     path: RouteNames.SETUP,
   },
   {
-    title: 'Basic Example',
+    title: 'Basic example',
     path: RouteNames.BASIC,
   },
   {
-    title: 'With Custom Component',
+    title: 'Custom params',
+    path: RouteNames.CUSTOM_PARAMS,
+  },
+  {
+    title: 'Custom component',
     path: RouteNames.CUSTOM_COMPONENT,
+  },
+  {
+    title: 'Multiple confirmation dialogs',
+    path: RouteNames.MULTIPLE_CONFIRMATION_DIALOGS,
   },
 ]
 
