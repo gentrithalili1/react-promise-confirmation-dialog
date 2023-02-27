@@ -10,7 +10,10 @@ function App() {
         text: "Welcome John Doe",
         customComponent: WelcomeModal,
       })
-    } catch (e) {}
+      // Your code after confirmation is resolved ...
+    } catch (e) {
+      // Your code after confirmation is declined ...
+    }
   }
     
   return (
@@ -72,7 +75,11 @@ const showWelcomeModal = async () => {
       },
       customComponent: WelcomeModal,
     })
-  } catch (e) {}
+    
+    // Your code after confirmation is resolved ...
+  } catch (e) 
+    // Your code after confirmation is declined ...
+  }
 }
 
 function WelcomeModal(props: WelcomeModalProps) {

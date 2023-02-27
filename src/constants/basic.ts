@@ -9,7 +9,7 @@ function App() {
           await confirmation.confirm()
           // Your code after confirmation is resolved ...
       } catch () {
-         // Your code after confirmation is declined 
+         // Your code after confirmation is declined ...
       }
   }  
     

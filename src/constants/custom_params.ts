@@ -25,7 +25,7 @@ function App() {
     
   return (
     <div>
-       <button onClick={handleClick}>Confirm</button>
+       <button onClick={handleClick}>Delete</button>
     </div>
   );
 }
