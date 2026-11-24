@@ -1,12 +1,13 @@
-<h3 align="center">Welcome to <code>react-promise-confirmation-dialog</code> 👋</h3>
-<p>
-  <a href="https://www.npmjs.com/package/react-promise-confirmation-dialog" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/react-promise-confirmation-dialog">
-  </a>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
+<p align="center"><img src="https://raw.githubusercontent.com/gentrithalili1/react-promise-confirmation-dialog/main/docs/banner.png" alt="gh44-confirm: promise based react dialogs"></p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/react-promise-confirmation-dialog"><img alt="Version" src="https://img.shields.io/npm/v/react-promise-confirmation-dialog"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
 </p>
+
+# gh44-confirm
+
+**Promise based React confirmation dialogs you can await, published as `react-promise-confirmation-dialog`.**
 
 ## Intro
 
